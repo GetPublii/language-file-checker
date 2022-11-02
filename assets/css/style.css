@@ -1,0 +1,120 @@
+:root {
+    --white: hsl(360, 100%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --hsl-blue: 212, 100%;
+    --hsl-dark: 225, 40%;
+    --page-width: 1200px;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(var(--hsl-dark), 97%);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+body>.wrapper {
+    margin: 30px auto;
+    max-width: calc(100% - 80px);
+    width: var(--page-width);
+}
+
+.top-ui,
+.results-ui-missing-translations,
+.results-ui-unnecessary-translations {
+    background: var(--white);
+    border-radius: 8px;
+    margin: 30px auto;
+    padding: 0 30px;
+    width: 100%;
+}
+
+.top-ui {
+    padding: 30px;
+}
+
+.results-ui-missing-translations,
+.results-ui-unnecessary-translations {
+    padding: 0 30px 1px 30px;
+}
+
+.results-ui-missing-translations:empty,
+.results-ui-unnecessary-translations:empty {
+    display: none;
+}
+
+.results-ui h2 {
+    font-size: 20px;
+    margin: 0;
+    padding: 30px 0 15px;
+}
+
+.result-item {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+.result-item:hover {
+    background: hsl(var(--hsl-blue), 99%);
+    box-shadow: -2px 0 0 0 hsl(var(--hsl-blue), 47%);;
+}
+.result-item+.result-item {
+    border-top: 1px solid hsl(var(--hsl-dark), 92%);
+}
+
+.result-item>div:nth-child(1) {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.result-header {
+    background: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    font-weight: bold;
+    position: sticky;
+    top: -15px;
+}
+
+.result-header>h2 {
+    grid-column: span 2;
+}
+
+.result-header>div {
+    background-color: hsl(var(--hsl-blue), 97%);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.result-item-row {
+    padding: 15px 20px;
+    word-wrap: break-word;
+}
+
+button {
+    background: hsl(var(--hsl-blue), 97%);
+    border: 2px solid hsl(var(--hsl-blue), 77%);
+    color: hsl(var(--hsl-blue), 47%);
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px 12px;
+}
+
+button:hover {
+    background: hsl(var(--hsl-blue), 47%);
+    border: 2px solid hsl(var(--hsl-blue), 47%);
+    color: var(--white);
+}
+
+select {
+    background-color: var(--white);
+    background-image: linear-gradient(to top, hsl(var(--hsl-dark), 97%), #fff 33%);
+    border: 1px solid hsl(var(--hsl-dark), 77%);
+    border-radius: 6px;
+    cursor: pointer;
+    padding: 10px 12px;
+    width: 10ch;
+}
